@@ -7,7 +7,7 @@ arr = []
 for i in range(n[0]):
     x = "Yes"
     for j in range(n[1]):
-        if i + j > n[0]:
+        if i + j >= n[0]:
             x = "No"
             break
         if A[i + j] != B[j]:
