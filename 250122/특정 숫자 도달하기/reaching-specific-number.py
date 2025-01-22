@@ -7,4 +7,4 @@ for i in arr:
         break
     s += i
     c += 1
-print(s, s/c)
+print(s, round(s/c, 1))
