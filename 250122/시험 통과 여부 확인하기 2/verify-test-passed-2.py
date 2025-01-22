@@ -8,4 +8,4 @@ for i in range(n):
         cnt += 1
     else:
         print("fail")
-print(c)
+print(cnt)
