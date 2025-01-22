@@ -7,7 +7,7 @@ for i in range(n):
     for j in price[i+1:]:
         arr.append(j - price[i])
 
-if max(arr):
+if arr != []:
     if max(arr) > 0:
         print(max(arr))
     else:
