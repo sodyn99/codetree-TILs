@@ -8,7 +8,5 @@ if B in A:
         t = A.find(B)
         if t < 0:
             break
-        A = list(A)
         A = A[:t] + A[t+len(B):]
-        A = ''.join(A)
 print(A)
