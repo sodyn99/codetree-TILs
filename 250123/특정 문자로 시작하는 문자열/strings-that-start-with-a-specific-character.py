@@ -9,7 +9,7 @@ alp = input()
 c = 0
 l = 0
 for i in arr:
-    if alp in i:
+    if i[0] == alp:
         c += 1
         l += len(i)
 
