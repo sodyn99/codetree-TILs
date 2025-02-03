@@ -11,7 +11,7 @@ class Distance:
     
 distances = [Distance(points[i][0], points[i][1][0], points[i][1][1]) for i in range(n)]
 
-distances.sort(key=lambda k: (k.x + k.y, k.id))
+distances.sort(key=lambda k: (abs(k.x) + abs(k.y), k.id))
 
 for d in distances:
     print(d.id)
