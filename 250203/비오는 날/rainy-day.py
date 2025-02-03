@@ -19,14 +19,10 @@ class Rain:
 
 rains = [Rain(date[i], day[i], weather[i]) for i in range(n)]
 
-result_date = "2100-00-00"
-result_day = ""
-result_weather = ""
+result = ("2100-00-00", "", "")
 for rain in rains:
     if rain.weather == "Rain":
-        if rain.date < result_date:
-            result_date = rain.date
-            result_day = rain.day
-            result_weather = rain.weather
+        if rain.date < result[0]:
+            result = rain.date, rain.day, rain.weather
 
-print(result_date, result_day, result_weather)
+print(*result)
