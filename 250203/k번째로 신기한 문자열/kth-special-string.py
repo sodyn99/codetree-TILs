@@ -5,7 +5,7 @@ str = [input() for _ in range(n)]
 # Write your code here!
 arr = []
 for s in str:
-    if t in s:
+    if t == s[:len(t)]:
         arr.append(s)
 
 arr.sort()
