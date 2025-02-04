@@ -5,7 +5,7 @@ a, b, c = map(int, input().split())
 t = 0
 d, h, m = 11, 11, 11
 while True:
-    if a < 11 and b < 11 and c < 11:
+    if a <= 11 and b <= 11 and c <= 11:
         print(-1)
         break
     elif d == a and h == b and m == c:
