@@ -7,7 +7,7 @@ if min(min(segments)) < 0:
     offset = abs(min(min(segments)))
 R = max(max(segments))
 
-arr = [0 for i in range(R)]
+arr = [0 for i in range(R + offset)]
 for i in range(n):
     for j in range(segments[i][0] + offset, segments[i][1] + offset):
         arr[j] += 1
