@@ -8,8 +8,8 @@ for num, direction in commands:
 
 # Write your code here!
 
-color = [0 for _ in range(100 + sum(x))]
-white = [0 for _ in range(100 + sum(x))]
+color = [0 for _ in range(100 + sum(x) + 1)]
+white = [0 for _ in range(100 + sum(x) + 1)]
 black = [0 for _ in range(100 + sum(x) + 1)]
 
 t = sum(x)
