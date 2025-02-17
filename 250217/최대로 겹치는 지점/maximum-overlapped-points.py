@@ -9,4 +9,4 @@ for i in segments:
     for j in range(i[0], i[1]+1):
         arr[j] += 1
 
-print(arr)
+print(max(arr))
