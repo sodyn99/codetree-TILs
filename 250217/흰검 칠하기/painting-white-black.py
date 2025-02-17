@@ -8,7 +8,9 @@ for num, direction in commands:
 
 # Write your code here!
 
-arr = [0 for _ in range(100 + sum(x))]
+color = [0 for _ in range(100 + sum(x))]
+white = [0 for _ in range(100 + sum(x))]
+black = [0 for _ in range(100 + sum(x))]
 
 t = sum(x)
 for i in range(n):
@@ -17,19 +19,26 @@ for i in range(n):
         t += x[i] - 1
     else:
         t -= x[i] - 1
-    for j in range(min(t0, t), max(t0, t) + 1):
-        arr[j] += 1
+    if t0 < t:
+        for j in range(t0, t + 1):
+            black[j] += 1
+            color[j] = 'black'
+            if white[j] >= 2 and black[j] >= 2:
+                color[j] = 'gray'
+    elif t0 == t:
+        if dir[i] == 'R':
+            for j in range(t0, t + 1):
+                black[j] += 1
+                color[j] = 'black'
+        else:
+            for j in range(t0, t - 1, -1):
+                white[j] += 1
+                color[j] = 'white'
+    else:
+        for j in range(t0, t - 1, -1):
+            white[j] += 1
+            color[j] = 'white'
+            if white[j] >= 2 and black[j] >= 2:
+                color[j] = 'gray'
 
-b, g = 0, 0
-black = 0
-for a in arr:
-    if a >= 4:
-        g += 1
-        if b > 0:
-            black = b
-        b = 0
-    elif a > 0:
-        b += 1
-
-print(b, black, g)
-    
+print(color.count('white'), color.count('black'), color.count('gray'))
