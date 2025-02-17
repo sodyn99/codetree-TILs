@@ -8,9 +8,9 @@ for num, direction in commands:
 
 # Write your code here!
 
-color = [0 for _ in range(100 + sum(x) + 1)]
-white = [0 for _ in range(100 + sum(x) + 1)]
-black = [0 for _ in range(100 + sum(x) + 1)]
+color = [0 for _ in range(2 * sum(x))]
+white = [0 for _ in range(2 * sum(x))]
+black = [0 for _ in range(2 * sum(x))]
 
 t = sum(x)
 for i in range(n):
