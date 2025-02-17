@@ -10,7 +10,7 @@ for num, direction in commands:
 
 color = [0 for _ in range(100 + sum(x))]
 white = [0 for _ in range(100 + sum(x))]
-black = [0 for _ in range(100 + sum(x))]
+black = [0 for _ in range(100 + sum(x) + 1)]
 
 t = sum(x)
 for i in range(n):
