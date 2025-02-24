@@ -11,5 +11,4 @@ for i in range(len(arr)):
         max_sum = max(arr[i], max_sum + arr[i])
     sum_arr[i] = max_sum
 
-print(sum_arr)
 print(max(sum_arr))
