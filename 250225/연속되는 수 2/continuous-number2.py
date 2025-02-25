@@ -3,7 +3,7 @@ arr = [int(input()) for _ in range(n)]
 
 # Write your code here!
 
-m = 0
+m = 1
 t = 0
 for i in range(1, n):
     if arr[i] != arr[i-1]:
