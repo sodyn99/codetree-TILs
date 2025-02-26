@@ -43,9 +43,8 @@ elif len(p_a) < len(p_b):
         p_a.append(p_a[-1])
 
 meet_num = 0
-for i in range(len(p_a)):
-    if i == 0 or p_a[i-1] != p_b[i-1]:
-        if p_a[i] == p_b[i]:
+for i in range(1, len(p_a)):
+    if p_a[i] == p_b[i] and p_a[i-1] != p_b[i-1]:
             meet_num += 1
 
 print(meet_num)
