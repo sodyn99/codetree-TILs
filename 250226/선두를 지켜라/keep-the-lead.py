@@ -14,15 +14,15 @@ for i in range(M):
     for j in range(B[i][1]):
         d_B.append(d_B[-1] + B[i][0])
 
-arr = []
-for i in range(len(d_A)):
-    arr.append(d_A[i] - d_B[i])
-
-t = 0
-for i in range(2, len(d_A)-1):
-    if arr[i] == 0:
-        arr[i] = 1
-    if arr[i] * arr[i-1] <= 0:
-        t += 1
+leader, t = 0, 0
+for i in range(1, len(d_A)):
+    if d_A[i] > d_B[i]:
+        if leader == 2:
+            t += 1
+        leader = 1
+    elif d_B[i] > d_A[i]:
+        if leader == 1:
+            t += 1
+        leader = 2
 
 print(t)
