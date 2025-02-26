@@ -6,8 +6,8 @@ student = [int(input()) for _ in range(M)]
 arr = [0 for _ in range(N)]
 pay = False
 for i in range(M):
+    arr[student[i]-1] += 1
     for j in range(N):
-        arr[student[i]-1] += 1
         if arr[j] >= K:
             pay = True
             print(j + 1)
