@@ -16,25 +16,28 @@ for _ in range(m):
 
 # Write your code here!
 
-def distance(d, t):
-    if d == "R":
-        return t
-    else:
-        return -t
-
+A, B = [], []
 a, b = 0, 0
-d += [0 for _ in range(m)]
-t += [0 for _ in range(m)]
-d2 += [0 for _ in range(n)]
-t2 += [0 for _ in range(n)]
 meet = False
-for i in range(n+m):
-    a += distance(d[i], t[i])
-    b += distance(d2[i], t2[i])
-    # print("-----", a, b)
-    if a == b:
-        print(a + 1)
+for i in range(n):
+    for j in range(t[i]):
+        if d[i] == "R":
+            a += 1
+        else:
+            a -= 1
+        A.append(a)
+for i in range(m):
+    for j in range(t2[i]):
+        if d2[i] == "R":
+            b += 1
+        else:
+            b -= 1
+        B.append(b)
+
+for i in range(len(A)):
+    if A[i] == B[i]:
         meet = True
+        print(i + 1)
         break
 
 if meet == False:
