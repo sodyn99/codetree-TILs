@@ -13,13 +13,13 @@ for b in B:
 prize = []
 max_d = 0
 for i in range(len(p_A)):
-    tmp = ()
     max_d = max(p_A[i], p_B[i])
-    if p_A[i] == max_d:
-        tmp.append('A')
-    if p_B[i] == max_d:
-        tmp.append('B')
-    prize.append(tmp)
+    if p_A[i] == max_d and p_B[i] == max_d:
+        prize.append(0)
+    elif p_A[i] == max_d:
+        prize.append(1)
+    elif p_B[i] == max_d:
+        prize.append(2)
     
 changed = 0
 for i in range(1, len(prize)):
