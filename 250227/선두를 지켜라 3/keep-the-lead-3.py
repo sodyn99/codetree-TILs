@@ -13,7 +13,7 @@ for b in B:
 prize = []
 max_d = 0
 for i in range(len(p_A)):
-    tmp = []
+    tmp = ()
     max_d = max(p_A[i], p_B[i])
     if p_A[i] == max_d:
         tmp.append('A')
