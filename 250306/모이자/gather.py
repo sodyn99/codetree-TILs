@@ -1,16 +1,11 @@
-orders = list(input())
+N = int(input())
+houses = list(map(int, input().split()))
 
-x, y = 0, 0
-dx = [1, 0, -1, 0]
-dy = [0, -1, 0, 1]
-direction = 3
-for order in orders:
-    if order == 'L':
-        direction = (direction - 1 + 4) % 4
-    elif order == 'R':
-        direction = (direction + 1) % 4
-    else:
-        x += dx[direction]
-        y += dy[direction]
+arr = []
+for i in range(N):
+    d = 0
+    for j in range(N):
+        d += houses[j] * abs(i - j)
+    arr.append(d)
 
-print(x, y)
+print(min(arr))
