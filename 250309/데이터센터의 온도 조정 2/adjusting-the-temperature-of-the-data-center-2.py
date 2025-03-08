@@ -5,7 +5,7 @@ def work_by_machine(t, Ta, Tb):
     work = 0
     if t < Ta:
         work = C
-    elif Ta <= t < Tb:
+    elif t <= Tb:
         work = G
     else:
         work = H
