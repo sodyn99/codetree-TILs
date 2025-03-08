@@ -10,10 +10,7 @@ def area(arr):
     return (max_x - min_x) * (max_y - min_y)
 
 min_area = 1600000000
-tmp = points.copy()
 for i in range(len(points)):
-    del tmp[i]
-    min_area = min(min_area, area(tmp))
-    tmp = points.copy()
+    min_area = min(min_area, area(points[:i]+points[i+1:]))
 
 print(min_area)
