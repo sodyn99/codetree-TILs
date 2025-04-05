@@ -13,7 +13,7 @@ def corrupt(l1, l2):
         return True
     return False
 
-cnt = 0
+cnt = 1
 def dfs(n, c):
     global cnt
     if n == N:
