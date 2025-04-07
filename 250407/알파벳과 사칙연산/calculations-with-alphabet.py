@@ -35,7 +35,7 @@ def calc(arr):
                 result += d
     return result
 
-max_result = float('-inf')
+max_result = -2 ** 31
 tmp_arr = []
 def dfs(n):
     global max_result
