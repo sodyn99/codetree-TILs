@@ -52,3 +52,4 @@ for k in range(1, 101):
 for K in range(len(Ks)):
     if Ks[K] == max_K:
         print(K+1, Ks[K])
+        break
