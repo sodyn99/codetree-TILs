@@ -43,11 +43,8 @@ Ks = []
 for k in range(1, 101):
     K = num_of_safe(k)
     visited = [[0 for _ in range(M)] for _ in range(N)]
-    if K < max_K:
-        break
-    else:
-        Ks.append(K)
-        max_K = max(max_K, K)
+    Ks.append(K)
+    max_K = max(max_K, K)
 
 for K in range(len(Ks)):
     if Ks[K] == max_K:
