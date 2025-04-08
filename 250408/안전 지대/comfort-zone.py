@@ -1,23 +1,17 @@
+import sys
+sys.setrecursionlimit(2500)
+
 N, M = map(int, input().split())
 houses = [list(map(int, input().split())) for _ in range(N)]
 visited = [[0 for _ in range(M)] for _ in range(N)]
-
-def sink(K):
-    sinked = [[0 for _ in range(M)] for _ in range(N)]
-    for i in range(N):
-        for j in range(M):
-            if houses[i][j] <= K:
-                sinked[i][j] = 1
-    return sinked
 
 def is_range(x, y):
     return 0 <= x < N and 0 <= y < M
 
 def can_go(x, y, K):
-    sinked = sink(K)
     if not is_range(x, y):
         return False
-    if visited[x][y] or sinked[x][y]:
+    if visited[x][y] or houses[x][y] <= K:
         return False
     return True
 
@@ -39,14 +33,14 @@ def num_of_safe(K):
     return cnt
 
 max_K = 0
-Ks = []
+ans_k = 0
 for k in range(1, 101):
     K = num_of_safe(k)
-    visited = [[0 for _ in range(M)] for _ in range(N)]
-    Ks.append(K)
-    max_K = max(max_K, K)
+    for i in range(N):
+        for j in range(M):
+            visited[i][j] = 0
+    if K > max_K:
+        max_K, ans_k = K, k
+    
+print(ans_k, max_K)
 
-for K in range(len(Ks)):
-    if Ks[K] == max_K:
-        print(K+1, Ks[K])
-        break
