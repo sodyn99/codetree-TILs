@@ -32,12 +32,7 @@ for i in range(N):
         if can_go(i, j):
             villages.append(dfs(i, j))
 
-new_villages = []
+villages.sort()
+print(len(villages))
 for v in villages:
-    if v > 0:
-        new_villages.append(v)
-
-new_villages.sort()
-print(len(new_villages))
-for v in new_villages:
     print(v)
