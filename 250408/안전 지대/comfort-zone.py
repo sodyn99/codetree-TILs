@@ -33,12 +33,12 @@ def num_of_safe(K):
     return cnt
 
 max_K = 0
-ans_k = 0
+ans_k = 1
 for k in range(1, 101):
-    K = num_of_safe(k)
     for i in range(N):
         for j in range(M):
             visited[i][j] = 0
+    K = num_of_safe(k)
     if K > max_K:
         max_K, ans_k = K, k
     
