@@ -2,16 +2,15 @@ from collections import deque
 
 N, K, M = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(N)]
-stones = set()
+stones = []
 for i in range(N):
     for j in range(N):
         if arr[i][j] == 1:
-            stones.add((i, j))
+            stones.append((i, j))
 def initialize_start(i):
     return int(i) - 1
 starts = [tuple(map(initialize_start, input().split())) for _ in range(K)]
 visited = [[0 for _ in range(N)] for _ in range(N)]
-
 q = deque()
 
 def initialize_visited():
@@ -47,14 +46,38 @@ def bfs(start):
                 cnt += 1
     return cnt
 
-out = []
-def dfs(n):
-    global out
-    if n == K:
+out_stones = []
+outed = [0 for _ in range(len(stones))]
+def dfs(n, out):
+    if n == M:
+        tmp = out[:]
+        tmp.sort()
+        if tmp not in out_stones:
+            out_stones.append(tmp)
         return
-    for stone in stones:
-        out.append(stone)
-        dfs(n+1)
-        out.pop()
+    for i, stone in enumerate(stones):
+        if outed[i] == 0:
+            outed[i] = 1
+            out.append(stone)
+            dfs(n+1, out)
+            out.pop()
+            outed[i] = 0
+dfs(0, [])
 
-print()
+max_go = 0
+for out_stone in out_stones:
+    for i, j in out_stone:
+        arr[i][j] = 0
+    
+    initialize_visited()
+    tmp_go = 0
+    for start in starts:
+        tmp_go += bfs(start)
+        
+    if tmp_go > max_go:
+        max_go = tmp_go
+    
+    for i, j in out_stone:
+        arr[i][j] = 1
+
+print(max_go)
